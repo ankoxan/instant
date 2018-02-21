@@ -1,0 +1,1126 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Instant Invest</title>
+	
+{% include 'css.html' %}
+
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="colorlib-load"></div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header_area animated">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <!-- Menu Area Start -->
+                <div class="col-12 col-lg-10 px-0">
+                    <div class="menu_area">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <!-- Logo -->
+                            <a class="navbar-brand" href="#"><img src="../../static/img/logo_instant_2.png" alt="">Instant Invest</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                            <!-- Menu Area -->
+                            <div class="collapse navbar-collapse" id="ca-navbar">
+                                <ul class="navbar-nav ml-auto" id="nav">
+                                    <li class="nav-item"><a class="nav-link" href="#about">Сбербанк</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#prognosis">Прогнозы</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#grafik">График</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#testimonials">Отзывы</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#screenshot">Лицензии</a></li>
+                                </ul>
+                                <div class="sing-up-button d-lg-none">
+                                    <a href="#">Купить за {{ object.real_price }}<span>&#8381</span></a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Signup btn -->
+                <div class="col-12 col-lg-2">
+                    <div class="sing-up-button d-none d-lg-block">
+                        <a href="#">Купить за {{ object.real_price }} <span>&#8381</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Wellcome Area Start ***** -->
+    <section class="wellcome_area clearfix" id="home">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-md">
+                    <div class="wellcome-heading">
+                        <h2>Покупайте акции {{ object.name_share }}</h2>
+                        <h3>{{ object.descript }}</h3>
+                        <p>Приобретая акции, вы становитесь собственником компании</p>
+                    </div>
+                    <div class="get-start-area">
+                        <!-- Form Start -->
+                        <form action="#" method="post" class="form-inline">
+                            <input type="email" class="form-control email mb-2" placeholder="Ваш@email.ru">
+                            <input type="submit" class="submit mb-2" value="Открыть счет">
+                        </form>
+                        <!-- Form End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Welcome thumb -->
+        <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s ">
+			<div class="single-special_2 card mx-auto align-items-center" style="">
+			  <div class="col-12 text-center">
+				<img class="" src="../../{{ object.img_logo }}" alt="">
+			  </div>
+			  <div class="card-body text-center">
+			  <h3 class="card-title">{{ object.name_share }} {{ object.descript }}</h3>
+	  			<p class="mt-3"><span>&#8381</span>{{ object.real_price }}<sup> {{ object.price_change_day }}</sup></p>
+			  </div>
+			  <ul class="list-group list-group-item-action">
+			  <a href="#prognosis"><li class="list-group-item mb-1">Прогнозы</li></a>
+			  <a href="#grafik"><li class="list-group-item mb-1">График</li></a>
+			  <a href="#benefits"><li class="list-group-item">Преимущества</li></a>
+			  </ul>
+			  <div class="card-body row justify-content-md-center">
+			  <button type="button" class="bg_btn_2">Купить акции</button>
+			  </div>
+			</div>
+		  </div>
+    </section>
+    <!-- ***** Wellcome Area END ***** -->
+    
+    
+    
+	<!-- ***** Prognosis Start ***** -->
+  <section id="prognosis" class="prognosis">
+	  <div class="bg-white pt-5">
+		<div class="section-heading text-center pt-5">
+		  <h2 class="">Прогнозы по {{ object.name_share }}</h2>
+		  <div class="line-shape"></div>
+		</div>
+
+	<div class="container px-5">
+	  <nav>
+		<div class="nav mt-5 nav-pills justify-content-center" id="nav-tab" role="tablist">
+		<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Цена акций</a>
+		<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Дивиденды</a>
+		<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Прошлые периоды</a>
+		<a class="nav-item nav-link" id="nav-contact-tab-0" data-toggle="tab" href="#nav-contact-1" role="tab" aria-controls="nav-contact" aria-selected="false">Рекомендации</a>
+		<a class="nav-item nav-link" id="nav-contact-tab-00" data-toggle="tab" href="#nav-contact-0" role="tab" aria-controls="nav-contact" aria-selected="false">Технический анализ</a>
+		</div>
+	  </nav>
+	  <div class="tab-content" id="nav-tabContent">
+		<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+		  <div class="row mt-5 text-center caption_p">
+		  <div class="col">
+			<p>Текущая цена</p>
+		  </div>
+		  <div class="col">
+			<p>Целевая цена</p>
+		  </div>
+		  <div class="col">
+			<p>Потенциал доходности</p>
+		  </div>
+		  <div class="col">
+			<p>Прибыль с января</p>
+		  </div>
+		</div>
+		<div class="row text-center body_p">
+		  <div class="col">
+			<p class="h3"><span>&#8381 </span>{{ object.real_price }}</p>
+		  </div>
+		  <div class="col">
+			<p class="h3"><span>&#8381 </span>{{ object.target_price_short }}</p>
+		  </div>
+		  <div class="col">
+			<p class="h3">{{ object.potential }}%</p>
+		  </div>
+		  <div class="col">
+			<p class="h3">+{{ object.price_change_january }}%</p>
+		  </div>
+		 </div>
+		</div>
+
+		<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+			 <div class="row mt-5 text-center caption_p">
+			  <div class="col">
+				<p>Доля от прибыли</p>
+			  </div>
+			  <div class="col">
+				<p>Текущая доходность</p>
+			  </div>
+			  <div class="col">
+				<p>Прогноз</p>
+			  </div>
+			  <div class="col">
+				<p>Дата выплаты</p>
+			  </div>
+			</div>
+			<div class="row text-center body_p">
+			  <div class="col">
+				<p class="h3">{{ object.dividends_profit }}</p>
+			  </div>
+			  <div class="col">
+				<p class="h3">{{ object.dividends_real }}</p>
+			  </div>
+			  <div class="col">
+				<p class="h3"><span>&#8381 </span>{{ object.dividends_prognosis }}</p>
+			  </div>
+			  <div class="col">
+				<p class="h3">{{ object.dividends_date }}</p>
+			  </div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+			<div class="row mt-5 text-center caption_p">
+			  <div class="col">
+				<p>Рост за 2017 год</p>
+			  </div>
+			  <div class="col">
+				<p>Рост за 3 года</p>
+			  </div>
+			  <div class="col">
+				<p>Рост за 10 лет</p>
+			  </div>
+			  <div class="col">
+				<p>Рост с начала года</p>
+			  </div>
+			</div>
+			<div class="row text-center body_p">
+			  <div class="col">
+				<p class="h3">+{{ object.price_change_2017 }}%</p>
+			  </div>
+			  <div class="col">
+				<p class="h3">+{{ object.price_change_3years }}%</p>
+			  </div>
+			  <div class="col">
+				<p class="h3">+{{ object.price_change_10years }}%</p>
+			  </div>
+			  <div class="col">
+				<p class="h3">+{{ object.price_change_january }}%</p>
+			  </div>
+			</div>
+		</div>
+			<div class="tab-pane fade" id="nav-contact-1" role="tabpanel" aria-labelledby="nav-contact-tab">
+				<p class="text-center mt-3">Прогнозы по росту цены акций {{ object.name_share }} от известных инвестдомов</p>
+			<div class="row mt-2 text-center caption_p">
+			  <div class="col">
+				<p>БКС</p>
+			  </div>
+			  <div class="col">
+				<p>Уралсиб</p>
+			  </div>
+			  <div class="col">
+				<p>Гзапромбанк</p>
+			  </div>
+			  <div class="col">
+				<p>ВТБ</p>
+			  </div>
+			</div>
+			<div class="row text-center body_p">
+			  <div class="col">
+				<p class="h3">+{{ object.price_change_2017 }}%</p>
+			  </div>
+			  <div class="col">
+				<p class="h3">+{{ object.price_change_3years }}%</p>
+			  </div>
+			  <div class="col">
+				<p class="h3">+{{ object.price_change_10years }}%</p>
+			  </div>
+			  <div class="col">
+				<p class="h3">+{{ object.price_change_january }}%</p>
+			  </div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="nav-contact-0" role="tabpanel" aria-labelledby="nav-contact-tab">
+		  <div class="ml-3 mt-5" id="outerdiv_2-0">22222</div>
+		</div>
+		<div class="tab-pane fade" id="nav-contact-00" role="tabpanel" aria-labelledby="nav-contact-tab">
+		  <div class="ml-3 mt-5" id="outerdiv_2-00">33333</div>
+		</div>
+	  </div>
+	   <table class="table mt-5 bg-white mb-0">
+		<tbody>
+		<tr>
+		  <td>Страна</td>
+		  <td class="text-right">{{ object.country }}</td>
+		</tr>
+		<tr>
+		  <td>Отрасль</td>
+		  <td class="text-right">{{ object.industry }}</td>
+		</tr>
+		<tr>
+		  <td>Основана</td>
+		  <td class="text-right">{{ object.date_of_organization }}</td>
+		</tr>
+		</tbody>
+	   </table>
+	  </div>
+
+	<div id="about" class="col-12 cool_facts_benefits">
+	  <div class="container p-5">  
+	   <div class="row">
+	  <div class="nav flex-column col-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+		<a class="nav-link active" id="v-pills-home-tab-0" data-toggle="pill" href="#v-pills-home-0" role="tab" aria-controls="v-pills-home" aria-selected="true">Основная информация</a>
+		<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Доля рынка</a>
+		<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Руководство</a>
+		<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Преимущества</a>
+	  </div>
+	  <div class="tab-content col-8 my-auto pl-5" id="v-pills-tabContent">
+		<div class="tab-pane fade show active" id="v-pills-home-0" role="tabpanel" aria-labelledby="v-pills-home-tab">{{ object.basic_information }} 
+	  </div>
+		<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">{{ object.market_share }} </div>
+		<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">{{ object.leadership }}</div>
+		<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">{{ object.benefits }} </div>
+	  </div>
+	  </div>
+	  </div>
+	</div>
+  </div>
+  </section>
+
+
+	<!-- ***** Prognosis END ***** -->
+
+    
+	<!-- ***** Grafik Start ***** -->
+	
+  <section id="grafik" class="pricing-plane-area section_padding_100 bg-white">
+    <div class="section-heading text-center">
+      <h2 class="">График изменения цены</h2>
+      <div class="line-shape mb-5"></div>
+      <img src="../../static/img/mac_gold.png" alt="">
+    </div>
+
+    <div class="container grafik mb-5 pb-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="frame row ml-1 justify-content-center">
+            <div class="" id="outerdiv">
+              <p>Загрузка графика цены акций {{ object.name_share }}</p>
+          <!--     <iframe id="innerIframe" src="https://www.finam.ru/profile/moex-akcii/sberbank/?market=1" name="iframe1" scrolling="no"></iframe> -->
+            <button class="inner_button">Нажмите, чтобы загрузить график</button>
+            </div>
+          </div>
+          <div id="badges" class="d-flex flex-column col-12">
+            <div class="d-flex-row">
+                <a href="#contact" class="badge badge-primary">Наши контакты</a><br>
+                <a href="#screenshot" class="badge badge-secondary">Лицензии</a><br>
+                <a href="#success" class="badge badge-success">Наш успех</a><br>
+                <a href="#" class="badge badge-danger">Отзывы</a><br>
+                <a href="#features" class="badge badge-warning">Зачем инвестировать</a><br>
+                <a href="#features-1" class="badge badge-info">Сравнить инструменты</a><br>
+                <a href="#contact" class="badge badge-primary">Открыть счет</a><br>
+                <a href="#" class="badge badge-dark">Купить акции</a>
+            </div>
+          
+            
+          </div>
+        </div>
+   <!--      <div class="col-5 align-items-center">
+            <div class="single-special-1 text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="single-icon">
+                    <i class="ti-mobile" aria-hidden="true"></i>
+                </div>
+                <h4>Покупать или продавать?</h4>
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Мы сообщим важные сигналы, которые влияют на изменение цены</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Согласие на обработку персональных данных</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary bg_btn_2">Подписаться</button>
+                </form>
+          </div>
+        </div> -->
+      </div>
+   </div>
+</section>
+    
+    <!-- ***** Grafik END ***** -->
+    
+    
+    <!-- 11.0 ***** CTA Area Start ***** -->
+    <section class="our-monthly-membership section_padding_100 clearfix">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <div class="membership-description">
+                        <h2>Покупать или продавать?</h2>
+                        <p>Гадать не нужно, ведь все определяется техническим и фундаментальным анализом! Наши опытные аналитики подскажут лучшие моменты для покупки или продажи акций {{ object.name_share }}.</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="get-start-area get-started-button wow bounceInDown" data-wow-delay="0.5s">
+                        <!-- Form Start -->
+                        <form action="#" method="post" class="form-inline">
+                            <input type="email" class="form-control email mb-2" placeholder="ваш@емэйл.ru">
+                            <input type="submit" class="submit mb-2" value="Подписаться">
+                        </form>
+                        <!-- Form End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** CTA Area End ***** -->
+    
+
+    <!-- ***** Special Area Start ***** -->
+    <section id="benefits" class="special-area bg-white section_padding_150" id="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading Area -->
+                    <div class="section-heading text-center">
+                         <h2>Преимущества покупки <br>акций {{ object.name_share }}</h2>
+                        <div class="line-shape mb-5"></div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="row">
+            <!-- Single Special Area -->
+            <div class="col-12 col-md-4">
+                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="single-icon">
+                        <i class="ti-mobile" aria-hidden="true"></i>
+                    </div>
+                    <h4>Голубая фишка</h4>
+                    <p>Это акции наиболее крупных, ликвидных и надёжных компаний со стабильными показателями доходности.</p>
+                </div>
+            </div>
+            <!-- Single Special Area -->
+            <div class="col-12 col-md-4">
+                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="single-icon">
+                        <i class="ti-pulse" aria-hidden="true"></i>
+                    </div>
+                    <h4>{{ object.price_change_3years }}% за 3 года</h4>
+                    <p>Если бы вы вложили деньги в акции Сбербанка три года назад, то ваш капитал увеличился бы <br>на {{ object.price_change_3years }}%</p>
+                </div>
+            </div>
+            <!-- Single Special Area -->
+            <div class="col-12 col-md-4">
+                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="single-icon">
+                        <i class="ti-settings" aria-hidden="true"></i>
+                    </div>
+                    <h4>Центробанк России</h4>
+                    <p>Главным акционером и собственником 50% уставного капитала «Сбербанка» является Центробанк РФ.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Special Description Area -->
+        <div id="pricing" class="special_description_area mt-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="special_description_img">
+                            <img src="../../static/img/bg-img/bankcard.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-5 ml-xl-auto">
+                          <div class="special_description_content">
+                    <h2>Как происходит процесс покупки?</h2>
+                    <p>Начать инвестировать очень просто – нажмите кнопку "купить", выберите количество акций, оплатите по банковской карте без комиссий по биржевой цене. После оплаты мы свяжимся с вами и откроем специальный счет, на котором будет вестись учет всех ваших сделок. Запись об акционерах ведется в специальном государственном депозитарии.</p>
+                    <div class="app-download-area">
+                        <div class="app-download-btn wow fadeInUp" data-wow-delay="0.2s">
+                            <!-- Google Store Btn -->
+                            <a href="#">
+                                <i class="fa fa-thumbs-o-up"></i>
+                                <p class="mb-0">Купить сейчас</p>
+                            </a>
+                        </div>
+                        <div class="app-download-btn wow fadeInDown" data-wow-delay="0.4s">
+                            <!-- Apple Store Btn -->
+                            <a href="#contact">
+                                <i class="fa fa-sort-amount-asc"></i>
+                                <p class="mb-0">Открыть счет</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Special Area END ***** -->
+
+    <!-- ***** Awesome Features Start ***** -->
+    <section class="awesome-feature-area bg-white section_padding_0_50 clearfix" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Heading Text -->
+                <div class="section-heading text-center">
+                    <h2>Почему нужно <br>инвестировать в акции ?</h2>
+                    <div class="line-shape mb-5"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Single Feature Start -->
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-feature">
+                    <i class="ti-user" aria-hidden="true"></i>
+                    <h5>Ваше будущее</h5>
+                    <p>Инвестиции в акций крупных компаний значительно увеличат ваши шансы стать богатым и финансово независимым человеком.</p>
+                </div>
+            </div>
+            <!-- Single Feature Start -->
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-feature">
+                    <i class="ti-pulse" aria-hidden="true"></i>
+                    <h5>Цена меняется</h5>
+                    <p>Вы можете зарабатывать даже когда акции дешевеют. Достаточно закрыть длинную позицию или "сыграть" на понижение.</p>
+                </div>
+            </div>
+            <!-- Single Feature Start -->
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-feature">
+                    <i class="ti-dashboard" aria-hidden="true"></i>
+                    <h5>Ваши накопления</h5>
+                    <p>Привычка постоянно инвестировать поможет накопить нужную сумму для покупки квартиры или автомобиля.</p>
+                </div>
+            </div>
+            <!-- Single Feature Start -->
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-feature">
+                    <i class="ti-palette" aria-hidden="true"></i>
+                    <h5>Творческий подход</h5>
+                    <p>Инвестируйте в те компании, услугами которых вы пользуетесь, чьи новости читаете и за кем следуете в социальных сетях.</p>
+                </div>
+            </div>
+            <!-- Single Feature Start -->
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-feature">
+                    <i class="ti-crown" aria-hidden="true"></i>
+                    <h5>Подумать о детях</h5>
+                    <p>Долгосрочное инвестирование способствует качественному образованию и материальному благополучию ваших детей.</p>
+                </div>
+            </div>
+            <!-- Single Feature Start -->
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-feature">
+                    <i class="ti-headphone" aria-hidden="true"></i>
+                    <h5>24/7 Online</h5>
+                    <p>Мы дадим свои рекомендации по бумагам иностранных эмитентов, на биржах, которые работают в ночное для России время.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <!-- ***** Awesome Features End ***** -->
+
+    <!-- ***** Video Area Start ***** -->
+<!--
+    <div class="video-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                     Video Area Start 
+                    <div class="video-area" style="background-image: url(img/bg-img/video.jpg);">
+                        <div class="video-play-btn">
+                            <a href="https://www.youtube.com/watch?v=f5BBJ4ySgpo" class="video_btn"><i class="fa fa-play" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <!-- ***** Video Area End ***** -->
+
+    <!-- ***** Cool Facts Area Start ***** -->
+    <section id="success" class="cool_facts_area clearfix">
+        <div class="container">
+            <div class="row">
+                <!-- Single Cool Fact-->
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="counter-area">
+                            <h3><span class="counter">90</span></h3>
+                        </div>
+                        <div class="cool-facts-content">
+                            <i class="ion-arrow-down-a"></i>
+                            <p>МЛН.РУБ. В <br>УПРАВЛЕНИИ</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Cool Fact-->
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="counter-area">
+                            <h3><span class="counter">977</span></h3>
+                        </div>
+                        <div class="cool-facts-content">
+                            <i class="ion-happy-outline"></i>
+                            <p>ДОВОЛЬНЫХ <br> КЛИЕНТОВ</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Cool Fact-->
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="counter-area">
+                            <h3><span class="counter">43</span></h3>
+                        </div>
+                        <div class="cool-facts-content">
+                            <i class="ion-person"></i>
+                            <p>УСПЕШНЫХ <br>СОТРУДНИКОВ</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Cool Fact-->
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="counter-area">
+                            <h3><span class="counter">10</span></h3>
+                        </div>
+                        <div class="cool-facts-content">
+                            <i class="ion-ios-star-outline"></i>
+                            <p>ЛЕТ ОПЫТА <br>В ТОРОВЛЕ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- ***** Compare Start ***** -->
+   	<section class="awesome-feature-area bg-white section_padding_150 clearfix" id="features-1">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<!-- Heading Text -->
+					<div class="section-heading text-center">
+						<h2>Сравнение с другими способами <br>инвестирования</h2>
+						<div class="line-shape"></div>
+						<p class="m-5 px-5">Узнайте о преимуществах инвестирования в акции крупных компаний <br>в сравнении с другими финансовыми инструментами</p>
+					</div>
+				</div>
+			</div>
+		   <div class="container px-5 compare-nav">
+			  <nav class="compare-nav">
+				<div class="nav nav-pills justify-content-center" id="nav-tab-1" role="tablist">
+				<a class="nav-item nav-link d-none" id="nav-home-tab-0" data-toggle="tab" href="#nav-home-0" role="tab" aria-controls="nav-home" aria-selected="true">Заставка</a>
+				<a class="nav-item nav-link" id="nav-home-tab-1" data-toggle="tab" href="#nav-home-1" role="tab" aria-controls="nav-home" aria-selected="true">Недвижимость</a>
+				<a class="nav-item nav-link" id="nav-profile-tab-2" data-toggle="tab" href="#nav-profile-1" role="tab" aria-controls="nav-profile" aria-selected="false">Депозит</a>
+				<a class="nav-item nav-link" id="nav-contact-tab-3" data-toggle="tab" href="#nav-contact-1" role="tab" aria-controls="nav-contact" aria-selected="false">Криптовалюты</a>
+				<a class="nav-item nav-link" id="nav-contact-tab-4" data-toggle="tab" href="#nav-contact-2" role="tab" aria-controls="nav-contact" aria-selected="false">МФО</a>
+				<a class="nav-item nav-link" id="nav-contact-tab-5" data-toggle="tab" href="#nav-contact-3" role="tab" aria-controls="nav-contact" aria-selected="false">Форекс</a>
+				 <a class="nav-item nav-link" id="nav-contact-tab-6" data-toggle="tab" href="#nav-contact-4" role="tab" aria-controls="nav-contact" aria-selected="false">Ценные бумаги</a>
+				</div>
+			  </nav>
+
+			  <div class="tab-content mt-5 px-5" id="nav-tabContent-1">
+				<div class="tab-pane fade show" id="nav-home-1" role="tabpanel" aria-labelledby="nav-home-tab">
+			   <div class="container">
+				<table class="table mt-5 bg-white mb-0">
+				  <tbody>
+				  <tr>
+					<td>Плюсы</td>
+					<td>Надежность. Недвижимость не может испариться и не может обесцениться до нулевой отметки. Можно продать или сдать в аренду.</td>
+				  </tr>
+				  <tr>
+					<td>Минусы</td>
+					<td class="">Необходимость содержать имущество, а это немалые затраты – ремонт, эксплуатационный износ, налоги, коммунальные платежи.  </td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td class="">Низкая ликвидность. Некоторые объекты могут годами продаваться, а чтобы продать быстро, нужно снизить цену.</td>
+				  </tr>
+					<tr>
+					<td></td>
+					<td class="">Невысокая доходность. Среднерыночный рост стоимости квадратного метра едва добирался до уровня инфляции.</td>
+				  </tr>
+					<tr>
+					<td>Вывод</td>
+					<td class="">Квартиру покупают в первую очередь для проживания в ней. Крупные инвесторы покупают недвижимость наряду с другими инструментами, как способ диверсификации. </td>
+				  </tr>
+				  </tbody>
+				 </table>
+			   </div>
+				</div>
+
+				<div class="tab-pane fade" id="nav-profile-1" role="tabpanel" aria-labelledby="nav-profile-tab">
+				  <div class="col-12">
+				   <table class="table mt-5 bg-white mb-0">
+				  <tbody>
+				  <tr>
+					<td>Плюсы</td>
+					<td>Надежность. Страхование вкладов.</td>
+				  </tr>
+				   <tr>
+					<td></td>
+					<td class="">Высокая ликвидность по окончанию срока вклада, но до этого момента, забрать деньги можно с потерей процентов.</td>
+				  </tr>
+				  <tr>
+					<td>Минусы</td>
+					<td class="">Низкая доходность. Процентная ставка едва покрывает инфляцию.</td>
+				  </tr>
+					<tr>
+					<td></td>
+					<td>Обесценение валюты. Компенсировать этот риск поможет диверсификация в разные валюты, но итоговая доходность неопределенная. В валюте проценты меньше в два-три раза. Можно застраховать или захеджировать риски на бирже, через покупку фьючерсов и опционов. Но тут лючше проконсультироваться со специалистами.</td>
+				  </tr>
+					<tr>
+					<td>Вывод</td>
+					<td class="">Банковский вклад, или депозит – классический способ сохранить свои сбережения, не думаю о дополнительном доходе.</td>
+				  </tr>
+				  </tbody>
+				 </table>
+				  </div>
+				</div>
+				<div class="tab-pane fade" id="nav-contact-1" role="tabpanel" aria-labelledby="nav-contact-tab">
+				<div class="ml-3 mt-5" id="outerdiv_2-1">
+				   <table class="table mt-5 bg-white mb-0">
+				  <tbody>
+				  <tr>
+					<td>Плюсы</td>
+					<td>Возможность получения свердоходов – более 1000%.</td>
+				  </tr>
+				   <tr>
+					<td></td>
+					<td class="">Высокая ликвидность по окончанию срока вклада, но до этого момента, забрать деньги можно с потерей процентов.</td>
+				  </tr>
+				  <tr>
+					<td>Минусы</td>
+					<td class="">Высокие риски потери всех денег за короткие сроки. Например, биткоин в начале 2018 года обесценился более чем в два раза всего за несколько дней и цена продолжает падать. Это не значит, что пора покупать, потому что непредсказуемость этого направления и отсутствие правовой базы может обесценить любую криптовалюту на 50% в любой момент.</td>
+				  </tr>
+					<tr>
+					<td></td>
+					<td>Нет правового регулирования деятельности криптобирж. Могут исчезнуть вместе с вашими деньгами.</td>
+				  </tr>
+					<tr>
+					<td>Вывод</td>
+					<td class="">В криптовалюты можно инвестировать ровно столько, сколько вы готовы потерять. В рисковые сделки можно вкладывать не более 10% от вашего инвестиционного капитала. Но эти 10% также необходимо диверсифицировать в разные рисковые активы.</td>
+				  </tr>
+				  </tbody>
+				 </table>
+				</div>
+				</div>
+				<div class="tab-pane fade" id="nav-contact-2" role="tabpanel" aria-labelledby="nav-contact-tab">
+				<div class="ml-3 mt-5" id="outerdiv_2-2">
+				   <table class="table mt-5 bg-white mb-0">
+				  <tbody>
+				  <tr>
+					<td>Плюсы</td>
+					<td>Обещают до 30% годовых и выше</td>
+				  </tr>
+				  <tr>
+					<td>Минусы</td>
+					<td class="">Эволюция различных финансовых кооперативов, которые брали деньги, затем банкротились и закрывались. Ваши вложения в основном направляются на займы людям под высокие проценты.</td>
+				  </tr>
+					<tr>
+					<td></td>
+					<td>Высокая невозвратность. В более 50% случаев граждане не возвращают микрозаймы. Высокая вероятность мошенничества, когда пользуясь некомпетентностью организации, заведомо беруться микрозаймы в многих МФО с целью их присвоения и невозврата.</td>
+				  </tr>
+					<tr>
+					<td></td>
+					<td>Неквалифицированные специалисты. В МФО не работают банковские сотрудники, а зачастую у руководителей нет финансового образования. Это порождает определенные риски потери вашего капитала.</td>
+				  </tr>
+					<tr>
+					<td>Выводы</td>
+					<td>Мы не рекомендуем вкладывать деньги в МФО.</td>
+				  </tr>
+				  </tbody>
+				 </table>
+				</div>
+				</div>
+			  </div>
+		  </div>
+		</div>
+	</section>
+	<!-- ***** Compare END ***** -->
+  
+   
+    <!-- ***** 8.0 App Screenshots Area Start ***** -->
+    <section class="app-screenshots-area section_padding_100 clearfix" id="screenshot">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <!-- Heading Text  -->
+                    <div class="section-heading">
+                        <h2>Наши лицензии</h2>
+                        <div class="line-shape mb-5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- App Screenshots Slides  -->
+                    <div class="app_screenshots_slides owl-carousel">
+                        <div class="single-shot">
+                            <img src="../../static/img/scr-img/l1.jpg" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="../../static/img/scr-img/l2.jpg" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="../../static/img/scr-img/l4.jpg" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="../../static/img/scr-img/l3.jpg" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="../../static/img/scr-img/l1.jpg" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="../../static/img/scr-img/l4.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** App Screenshots Area End *****====== -->
+
+    <!-- ***** Client Feedback Area Start ***** -->
+    <section class="clients-feedback-area bg-white section_padding_100 clearfix" id="testimonials">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10">
+                    <div class="slider slider-for">
+                        <!-- Client Feedback Text  -->
+                        <div class="client-feedback-text text-center">
+                            <div class="client">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <div class="client-description text-center">
+                                <p>“ I have been using it for a number of years. I use Colorlib for usability testing. It's great for taking images and making clickable image prototypes that do the job and save me the coding time and just the general hassle of hosting. ”</p>
+                            </div>
+                            <div class="star-icon text-center">
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                            </div>
+                            <div class="client-name text-center">
+                                <h5>Aigars Silkalns</h5>
+                                <p>Ceo Colorlib</p>
+                            </div>
+                        </div>
+                        <!-- Client Feedback Text  -->
+                        <div class="client-feedback-text text-center">
+                            <div class="client">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <div class="client-description text-center">
+                                <p>“ I use Colorlib for usability testing. It's great for taking images and making clickable image prototypes that do the job and save me the coding time and just the general hassle of hosting. ”</p>
+                            </div>
+                            <div class="star-icon text-center">
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                            </div>
+                            <div class="client-name text-center">
+                                <h5>Jennifer</h5>
+                                <p>Developer</p>
+                            </div>
+                        </div>
+                        <!-- Client Feedback Text  -->
+                        <div class="client-feedback-text text-center">
+                            <div class="client">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <div class="client-description text-center">
+                                <p>“ I have been using it for a number of years. I use Colorlib for usability testing. It's great for taking images and making clickable image prototypes that do the job.”</p>
+                            </div>
+                            <div class="star-icon text-center">
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                            </div>
+                            <div class="client-name text-center">
+                                <h5>Helen</h5>
+                                <p>Marketer</p>
+                            </div>
+                        </div>
+                        <!-- Client Feedback Text  -->
+                        <div class="client-feedback-text text-center">
+                            <div class="client">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <div class="client-description text-center">
+                                <p>“ I have been using it for a number of years. I use Colorlib for usability testing. It's great for taking images and making clickable image prototypes that do the job and save me the coding time and just the general hassle of hosting. ”</p>
+                            </div>
+                            <div class="star-icon text-center">
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                            </div>
+                            <div class="client-name text-center">
+                                <h5>Henry smith</h5>
+                                <p>Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Client Thumbnail Area -->
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="slider slider-nav">
+                        <div class="client-thumbnail">
+                            <img src="../../static/img/bg-img/client-3.jpg" alt="">
+                        </div>
+                        <div class="client-thumbnail">
+                            <img src="../../static/img/bg-img/client-2.jpg" alt="">
+                        </div>
+                        <div class="client-thumbnail">
+                            <img src="../../static/img/bg-img/client-1.jpg" alt="">
+                        </div>
+                        <div class="client-thumbnail">
+                            <img src="../../static/img/bg-img/client-2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Client Feedback Area End ***** -->
+
+    <!-- ***** CTA Area Start ***** -->
+    <section class="our-monthly-membership section_padding_100 clearfix">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="membership-description">
+                        <h2>Совершите покупку акций прямо сейчас!</h2>
+                        <p>В долгосрочной перспектике акции {{ object.name_paper }} - одна из наиболее привлекательных бумаг на российском фондовом рынке</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="get-started-button wow bounceInDown" data-wow-delay="0.5s">
+                        <a href="#">Купить за {{ object.real_price }} <span>&#8381</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** CTA Area End ***** -->
+
+    <!-- ***** Our Team Area Start ***** -->
+    <section class="our-Team-area bg-white section_padding_100_50 clearfix" id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <!-- Heading Text  -->
+                    <div class="section-heading">
+                        <h2>Наша команда</h2>
+                        <div class="line-shape mb-5"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="single-team-member">
+                        <div class="member-image">
+                            <img src="../../static/img/team-img/team-1.jpg" alt="">
+                            <div class="team-hover-effects">
+                                <div class="team-social-icon">
+                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-text">
+                            <h4>Jackson Nash</h4>
+                            <p>Tax Advice</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="single-team-member">
+                        <div class="member-image">
+                            <img src="../../static/img/team-img/team-2.jpg" alt="">
+                            <div class="team-hover-effects">
+                                <div class="team-social-icon">
+                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-text">
+                            <h4>Alex Manning</h4>
+                            <p>CEO-Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="single-team-member">
+                        <div class="member-image">
+                            <img src="../../static/img/team-img/team-3.jpg" alt="">
+                            <div class="team-hover-effects">
+                                <div class="team-social-icon">
+                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-text">
+                            <h4>Ollie Schneider</h4>
+                            <p>Business Planner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="single-team-member">
+                        <div class="member-image">
+                            <img src="../../static/img/team-img/team-4.jpg" alt="">
+                            <div class="team-hover-effects">
+                                <div class="team-social-icon">
+                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-text">
+                            <h4>Roger West</h4>
+                            <p>Financer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Our Team Area End ***** -->
+
+    <!-- ***** Contact Us Area Start ***** -->
+    <section class="footer-contact-area section_padding_100 clearfix" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Heading Text  -->
+                    <div class="section-heading">
+                        <h2>Свяжитесь с нами!</h2>
+                        <div class="line-shape mb-5"></div>
+                    </div>
+                    <div class="footer-text">
+                        <p>Наши специалисты ответят на все вопросы и удаленно откроют брокерский счет, на котором происходит учет всех операций по ценым бумагам.</p>
+                    </div>
+                    <div class="address-text">
+                        <p><span>Адрес:</span> Санкт-Петербург, ВО, 9-линия дом 34, БЦ "Магнус", 7 этаж офис 722</p>
+                    </div>
+                    <div class="phone-text">
+                        <p><span>Phone:</span> +7-911-234-50-99</p>
+                    </div>
+                    <div class="email-text">
+                        <p><span>Email:</span> ankoxan@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!-- Form Start-->
+                    <div class="contact_from">
+                        <form action="#" method="post">
+                            <!-- Message Input Area Start -->
+                            <div class="contact_input_area">
+                                <div class="row">
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Как Вас зовут?" required>
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Ваш E-mail" required>
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Ваше обращение" required></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-12 mt-3">
+                                        <button type="submit" class="btn submit-btn">Отправить</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Message Input Area End -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us Area End ***** -->
+
+    <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-social-icon text-center section_padding_70 clearfix">
+        <!-- footer logo -->
+        <div class="footer-text">
+            <h2>Instant Invest</h2>
+        </div>
+        <!-- social icon-->
+        <div class="footer-social-icon">
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="active fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        </div>
+        <div class="footer-menu">
+            <nav>
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Термины &amp; Воспросы</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Foooter Text-->
+        <div class="copyright-text">
+            <!-- ***** Removing this text is now allowed! This template is licensed under CC BY 3.0 ***** -->
+            <p>Copyright ©2018 Instant-Invest. Designed by <a href="https://colorlib.com" target="_blank">Andrey Kox</a></p>
+        </div>
+    </footer>
+    <!-- ***** Footer Area Start ***** -->
+{% include 'js.html' %}
+
+</body>
+
+</html>
