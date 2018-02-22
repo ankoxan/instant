@@ -47,6 +47,10 @@
 body {
     font-family: 'Cabin', sans-serif;
     background-color: #fff;
+    max-width: 100%;
+}
+.wrapperrr {
+	overflow-x: hidden !important;
 }
 
 h1,
@@ -695,19 +699,7 @@ position:relative;
 	border: 1px solid black;
 	border-radius: 5px;
 }
-.inner_button {
-    position: absolute;
-    top: 100px;
-    margin-left: 30%;
-    margin-right: 30%;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: grey;
-    cursor: pointer;
-}
-.inner_button:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+
 
 #innerIframe 
 { 
@@ -732,12 +724,9 @@ height:1450px;
 
 }
 #badges {
-    position: absolute;
-    margin-left: -30px;
-    top: 0px; 
 }
 .badge {
-    margin: 10px 0px;
+    margin: 5px;
 }
 
 
@@ -770,6 +759,15 @@ height:1450px;
 	margin-bottom: 20px;
 }
 
+
+.grafic_trading {
+    margin: -30px 0;
+}
+.margin {
+    height: 50px;
+    background-color: white;
+    z-index: 1;
+}
 
 
 /* --------------------------

@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
@@ -17,6 +18,7 @@
 </head>
 
 <body>
+   <div class="wrapperrr">
     <!-- Preloader Start -->
     <div id="preloader">
         <div class="colorlib-load"></div>
@@ -36,7 +38,7 @@
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item"><a class="nav-link" href="#about">Сбербанк</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#about"><i class="fa fa-info-circle" aria-hidden="true"></i> {{ object.name_share }}</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#prognosis">Прогнозы</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#grafik">График</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#testimonials">Отзывы</a></li>
@@ -66,7 +68,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
                     <div class="wellcome-heading">
-                        <h2>Покупайте акции {{ object.name_share }}</h2>
+                        <h2>Покупайте акции {{ object.name_share }}а</h2>
                         <h3>{{ object.descript }}</h3>
                         <p>Приобретая акции, вы становитесь собственником компании</p>
                     </div>
@@ -247,8 +249,32 @@
 			  </div>
 			</div>
 		</div>
+
 		<div class="tab-pane fade" id="nav-contact-0" role="tabpanel" aria-labelledby="nav-contact-tab">
-		  <div class="ml-3 mt-5" id="outerdiv_2-0">22222</div>
+		  <div class="ml-3 mt-5" id="outerdiv_2-0">
+			<!-- TradingView Widget BEGIN -->
+			<div id="tv-ideas-stream-15048"></div>
+			<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+			<script type="text/javascript">
+			new TradingView.IdeasStreamWidget({
+			  "container_id": "tv-ideas-stream-15048",
+			  "startingCount": 1,
+			  "width": "100%",
+			  "height": "auto",
+			  "mode": "integrate",
+			  "bgColor": "#f2f5f8",
+			  "headerColor": "rgba(152, 0, 255, 1)",
+			  "borderColor": "#dce1e6",
+			  "locale": "ru",
+			  "sort": "discussed",
+			  "time": "month",
+			  "interval": "all",
+			  "stream": "all",
+			  "symbol": "MOEX:SBER"
+			});
+			</script>
+			<!-- TradingView Widget END -->
+		  </div>
 		</div>
 		<div class="tab-pane fade" id="nav-contact-00" role="tabpanel" aria-labelledby="nav-contact-tab">
 		  <div class="ml-3 mt-5" id="outerdiv_2-00">33333</div>
@@ -294,27 +320,68 @@
   </div>
   </section>
 
-
 	<!-- ***** Prognosis END ***** -->
 
     
-	<!-- ***** Grafik Start ***** -->
+	<!-- ***** 3.2 Grafik Start ***** -->
 	
   <section id="grafik" class="pricing-plane-area section_padding_100 bg-white">
     <div class="section-heading text-center">
       <h2 class="">График изменения цены</h2>
       <div class="line-shape mb-5"></div>
-      <img src="../../static/img/mac_gold.png" alt="">
+      <!-- <img src="../../static/img/mac_gold.png" alt=""> -->
+    </div>
+	<!-- <div class="col-12 margin"></div> -->
+  <div class="container">
+   <div class="row justify-content-center">
+    <div class="grafic_trading col align-self-center">
+    	<!-- TradingView Widget BEGIN -->
+		<div class="tradingview-widget-container">
+		  <div id="tradingview_1b465"></div>
+		  <div class="tradingview-widget-copyright"><a href="https://ru.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL</span> <span class="blue-text">chart</span> by TradingView</a></div>
+		  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+		  <script type="text/javascript">
+		  new TradingView.widget(
+		  {
+		  "width": '100%',
+		  "height": 510,
+		  "symbol": "NASDAQ:AAPL",
+		  "interval": "D",
+		  "timezone": "Etc/UTC",
+		  "theme": "Light",
+		  "style": "1",
+		  "locale": "ru",
+		  "toolbar_bg": "#f1f3f6",
+		  "enable_publishing": false,
+		  "allow_symbol_change": true,
+		  "hideideas": true,
+		  "container_id": "tradingview_1b465"
+		}
+		  );
+		  </script>
+		</div>
+		</div>
+		</div>
+		<!-- TradingView Widget END -->
+    </div>
+    <!-- <div class="col-12 margin"></div> -->
+   	<div id="badges" class="d-flex col-12 justify-content-center">
+	    <a href="#contact" class="badge badge-primary">Наши контакты</a><br>
+	    <a href="#screenshot" class="badge badge-secondary">Лицензии</a><br>
+	    <a href="#success" class="badge badge-success">Наш успех</a><br>
+	    <a href="#" class="badge badge-danger">Отзывы</a><br>
+	    <a href="#features" class="badge badge-warning">Зачем инвестировать</a><br>
+	    <a href="#features-1" class="badge badge-info">Сравнить инструменты</a><br>
+	    <a href="#contact" class="badge badge-primary">Открыть счет</a><br>
+	    <a href="#" class="badge badge-dark">Купить акции</a>
     </div>
 
-    <div class="container grafik mb-5 pb-5">
+    <!-- <div class="container grafik mb-5 pb-5">
       <div class="row">
         <div class="col-12">
           <div class="frame row ml-1 justify-content-center">
             <div class="" id="outerdiv">
-              <p>Загрузка графика цены акций {{ object.name_share }}</p>
-          <!--     <iframe id="innerIframe" src="https://www.finam.ru/profile/moex-akcii/sberbank/?market=1" name="iframe1" scrolling="no"></iframe> -->
-            <button class="inner_button">Нажмите, чтобы загрузить график</button>
+              <iframe id="innerIframe" src="https://www.finam.ru/profile/moex-akcii/sberbank/?market=1" name="iframe1" scrolling="no"></iframe>
             </div>
           </div>
           <div id="badges" class="d-flex flex-column col-12">
@@ -328,11 +395,9 @@
                 <a href="#contact" class="badge badge-primary">Открыть счет</a><br>
                 <a href="#" class="badge badge-dark">Купить акции</a>
             </div>
-          
-            
           </div>
         </div>
-   <!--      <div class="col-5 align-items-center">
+        <div class="col-5 align-items-center">
             <div class="single-special-1 text-center wow fadeInUp" data-wow-delay="0.2s">
                 <div class="single-icon">
                     <i class="ti-mobile" aria-hidden="true"></i>
@@ -351,9 +416,9 @@
                   <button type="submit" class="btn btn-primary bg_btn_2">Подписаться</button>
                 </form>
           </div>
-        </div> -->
+        </div>
       </div>
-   </div>
+   </div> -->
 </section>
     
     <!-- ***** Grafik END ***** -->
@@ -361,6 +426,7 @@
     
     <!-- 11.0 ***** CTA Area Start ***** -->
     <section class="our-monthly-membership section_padding_100 clearfix">
+
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-7">
@@ -814,7 +880,7 @@
                                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                             </div>
                             <div class="client-description text-center">
-                                <p>“ I have been using it for a number of years. I use Colorlib for usability testing. It's great for taking images and making clickable image prototypes that do the job and save me the coding time and just the general hassle of hosting. ”</p>
+                                <p>“ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum pariatur, culpa dolores laudantium distinctio. Voluptas ea delectus dignissimos corporis sequi quas dolores aut, sit? Tempore expedita, assumenda eum tempora! ”</p>
                             </div>
                             <div class="star-icon text-center">
                                 <i class="ion-ios-star"></i>
@@ -834,7 +900,7 @@
                                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                             </div>
                             <div class="client-description text-center">
-                                <p>“ I use Colorlib for usability testing. It's great for taking images and making clickable image prototypes that do the job and save me the coding time and just the general hassle of hosting. ”</p>
+                                <p>“ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga amet distinctio numquam doloribus animi dicta odio, possimus, ipsum tenetur, odit quos corporis. Ex rem voluptas, alias nam mollitia. Expedita, quo. ”</p>
                             </div>
                             <div class="star-icon text-center">
                                 <i class="ion-ios-star"></i>
@@ -854,7 +920,7 @@
                                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                             </div>
                             <div class="client-description text-center">
-                                <p>“ I have been using it for a number of years. I use Colorlib for usability testing. It's great for taking images and making clickable image prototypes that do the job.”</p>
+                                <p>“ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae qui suscipit dignissimos iste enim harum, deserunt, minima temporibus aliquam dicta mollitia, hic blanditiis! Repellendus itaque amet, velit incidunt temporibus doloremque!”</p>
                             </div>
                             <div class="star-icon text-center">
                                 <i class="ion-ios-star"></i>
@@ -874,7 +940,7 @@
                                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                             </div>
                             <div class="client-description text-center">
-                                <p>“ I have been using it for a number of years. I use Colorlib for usability testing. It's great for taking images and making clickable image prototypes that do the job and save me the coding time and just the general hassle of hosting. ”</p>
+                                <p>“ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic officia illum reiciendis labore maxime expedita cumque, in, quae minima. Mollitia maxime dolor quos tempora animi distinctio deserunt quod earum illum! ”</p>
                             </div>
                             <div class="star-icon text-center">
                                 <i class="ion-ios-star"></i>
@@ -1120,7 +1186,7 @@
     </footer>
     <!-- ***** Footer Area Start ***** -->
 {% include 'js.html' %}
-
+</div>
 </body>
 
 </html>

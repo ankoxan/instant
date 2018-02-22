@@ -49,6 +49,7 @@ class SearchShareListView(ListView):
 class ShareDetailView(DetailView):
 	queryset = Share.objects.all()
 	template_name = 'base.html'
+	
 
 	def get_context_data(self, *arg, **kwargs):
 		print(self.kwargs)

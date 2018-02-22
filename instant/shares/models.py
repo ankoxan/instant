@@ -12,6 +12,7 @@ class Share(models.Model):
 	market_share		 	= models.TextField(max_length=1000, null=False, blank=True)
 	leadership			 	= models.TextField(max_length=1000, null=False, blank=True)
 	benefits			 	= models.TextField(max_length=1000, null=False, blank=True)
+	grafik_code				= models.CharField(max_length=5000, null=False, blank=True)
 	capitalization 			= models.CharField(max_length=30, null=False, blank=True)
 	dividends_profit		= models.CharField(max_length=30, null=False, blank=True)
 	dividends_real			= models.CharField(max_length=30, null=False, blank=True)
